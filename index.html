@@ -25,7 +25,6 @@
       left: 50%;
       margin-left: -400px;
       top: 25%;
-
     }
     #box {
       width:800px;
@@ -79,7 +78,6 @@
 
 
   <script type="text/javascript">
-
    var lst = [];
    var trivia_qs = ["The chocolate candy M&Ms stands for Mars and Murrie",
                     "You can hear a blue whale's heartbeat from more than 2 miles away",
@@ -94,46 +92,35 @@
    var folders = ["Wikipedia [www.wikipedia.org/trivia]", "Yahoo [www.yahoo.com/info]", "Youtube [www.youtube.com/randomfacts]"];
    var a = [0,0,0,1,1,1,2,2,2];
    var count = 0;
-
    function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
-
       // While there remain elements to shuffle...
       while (0 !== currentIndex) {
-
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-
       // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
       }
-
       return array;
       }
-
    function myFunction() {
      var x = document.getElementById("input");
      var y = document.getElementById("saved");
      var z = document.getElementById("trivia");
-
      if (x.value == '') {
        z.innerHTML = trivia_qs[count];
        y.innerHTML = '';
      }
-
      else {
        var r = Math.floor(Math.random() * 3);
        lst.push(x.value);
        x.value = '';
-
-
        if (a[count] == 2) {
          lst.push(options[a[count]]+folders[r]);
          y.innerHTML = options[a[count]]+folders[r];
-
        }  else {
          lst.push(options[a[count]]);
          y.innerHTML = options[a[count]];
@@ -141,12 +128,10 @@
        count ++;
      }
    }
-
    function done() {
      var x = document.getElementById("box");
      x.innerHTML = lst.join('<br/>');
    }
-
    function start() {
      count = 0;
      lst = [];
@@ -158,7 +143,6 @@
      x.innerHTML = '';
      z.innerHTML = trivia_qs[0];
    }
-
   </script>
 
 
@@ -178,4 +162,4 @@
 
 
 </body>
-</html>​
+</html>
